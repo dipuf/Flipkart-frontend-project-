@@ -19,4 +19,15 @@ let nav = document.querySelector("nav");
 nav.addEventListener("click",function(){
     history.classList.remove("active");
 })
-
+let boxe = document.querySelector(".boxes");
+function slide(){
+    boxe.style.transition = "transform 0.5s ease";
+    boxe.style.transform = `translateX(-${440}px)`;
+    setTimeout(() => {
+        boxe.style.transition = "none";
+        let firstimage = boxe.firstElementChild;
+        boxe.appendChild(firstimage)
+        boxe.style.transform = `translateX(0px)`;
+    },500);
+}
+setInterval(slide,3000);
